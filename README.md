@@ -1,6 +1,6 @@
 # Cards-App
 
-En Cards-App podrás crear tickest de requerimiento, listarlos y editarlos. Conocenos en el siguiente link: [Create React App](https://github.com/facebook/create-react-app).
+En Cards-App podrás crear tickest de requerimiento, listarlos y editarlos. Conocenos en el siguiente link: [Cards-App](https://mayrenejose.github.io/cards-App/).
 
 ## Herramientas
 
