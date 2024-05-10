@@ -1,17 +1,24 @@
 import { useDispatch } from 'react-redux'
-import { filterPriority, filterState, clearFilter } from '../../../redux/reducers'
+import { filterPriority, filterState, clearFilter, filterType } from '../../../redux/reducers'
 
 export const Filters = () => {
     const dispatch = useDispatch()
 
-    const handleEstadoChange = (e) => {
-        const selectedState = e.target.value
-        dispatch(filterState(selectedState))
-    }
-    
-    const handlePrioridadChange = (e) => {
-        const selectedPriority = e.target.value
-        dispatch(filterPriority(selectedPriority))
+    const handleChange = (e, filterName) => {
+        const selectedValue = e.target.value
+        switch (filterName) {
+            case 'estado':
+                dispatch(filterState(selectedValue))
+                break
+            case 'prioridad':
+                dispatch(filterPriority(selectedValue))
+                break
+            case 'type':
+                dispatch(filterType(selectedValue))
+                break
+            default:
+                break
+        }
     }
 
     const handleCleanData = () => {
@@ -31,7 +38,7 @@ export const Filters = () => {
                     leading-tight focus:outline-none focus:shadow-outline"
                     id="estado"
                     name="stateticket"
-                    onChange={handleEstadoChange}
+                    onChange={(e) => handleChange(e, 'estado')}
                 >
                     <option>Estado</option>
                     <option value="abierto">Abierto</option>
@@ -49,7 +56,7 @@ export const Filters = () => {
                     leading-tight focus:outline-none focus:shadow-outline"
                     id="prioridad"
                     name="priority"
-                    onChange={handlePrioridadChange}
+                    onChange={(e) => handleChange(e, 'prioridad')}
                 >
                     <option>Prioridad</option>
                     <option value="alta">Alta</option>
@@ -58,15 +65,33 @@ export const Filters = () => {
                 </select>
             </div>
 
+            <div className="flex mr-5">
+                <select
+                    className="shadow 
+                    border rounded 
+                    w-full 
+                    py-2 px-3 
+                    text-gray-700 
+                    leading-tight focus:outline-none focus:shadow-outline"
+                    id="prioridad"
+                    name="priority"
+                    onChange={(e) => handleChange(e, 'type')}
+                >
+                    <option>Tipo</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="funcional">Funcional</option>
+                </select>
+            </div>
+
             <button className='bg-blue-500 
-            hover:bg-blue-700 
-            text-white 
-            font-bold 
-            py-2 px-4 
-            rounded 
-            flex 
-            text-lg'
-            onClick={handleCleanData}
+                hover:bg-blue-700 
+                text-white 
+                font-bold 
+                py-2 px-4 
+                rounded 
+                flex 
+                text-lg'
+                onClick={handleCleanData}
             >
                 Limpiar filtro
             </button>

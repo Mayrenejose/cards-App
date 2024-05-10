@@ -4,7 +4,7 @@ const initialState = [
             id: 1, 
             title: "Ticket 1", 
             description: "Descripción del Ticket 1", 
-            type: "técnico", 
+            type: "tecnico", 
             date: "09/05/2024", 
             priority: "alta", 
             stateticket: "abierto" 
@@ -13,7 +13,7 @@ const initialState = [
             id: 2, 
             title: "Ticket 2", 
             description: "Descripción del Ticket 2", 
-            type: "técnico", 
+            type: "funcional", 
             date: "09/05/2024", 
             priority: "baja", 
             stateticket: "cerrado"
