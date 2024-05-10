@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Cards-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En Cards-App podrás crear tickest de requerimiento, listarlos y editarlos. Conocenos en el siguiente link: [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
