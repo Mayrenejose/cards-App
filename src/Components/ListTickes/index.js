@@ -3,12 +3,17 @@ import { removeTicket } from '../../redux/reducers'
 import { SlTrash, SlPencil } from "react-icons/sl"
 import { Filters } from './Filters'
 
-export const ListTickets = () => {
+export const ListTickets = ({setOpenFormUpdate, openFormUpdate, setIdUpdate}) => {
   const dispatch = useDispatch()
   const tickets = useSelector((state) => state.ticket)
 
   const handleRemoveTicket = id => {
     dispatch(removeTicket(id))
+  }
+  
+  const handleUpdate = id => {
+    setIdUpdate(id)
+    setOpenFormUpdate(!openFormUpdate)
   }
 
   return (
@@ -34,7 +39,7 @@ export const ListTickets = () => {
                 </div>
                 <div className='flex flex-col justify-evenly'>
                   <button onClick={() => handleRemoveTicket(ticket.id)}><SlTrash /></button>
-                  <button><SlPencil /></button>
+                  <button onClick={()=> handleUpdate(ticket.id)}><SlPencil /></button>
                 </div>
             </div>
         ))} 

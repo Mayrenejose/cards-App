@@ -22,9 +22,23 @@ export const ticketSlice = createSlice({
     },
     clearFilter: (state) => {
       return initialState
+    },
+    updateTicketPriority: (state, action) => {
+      return state.map(ticket =>
+        ticket.id === action.payload.ticketId
+          ? { ...ticket, priority: action.payload.newPriority}
+          : ticket
+      )
+    },
+    updateTicketState: (state, action) => {
+      return state.map(ticket =>
+        ticket.id === action.payload.ticketId
+          ? { ...ticket, priority: action.payload.newState}
+          : ticket
+      )
     }
   }
 })
 
-export const { addTicket, removeTicket, filterPriority, filterState, clearFilter, filterType } = ticketSlice.actions
+export const { addTicket, removeTicket, filterPriority, filterState, clearFilter, filterType, updateTicketPriority, updateTicketState } = ticketSlice.actions
 export default ticketSlice.reducer
