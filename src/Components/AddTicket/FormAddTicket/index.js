@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { addTicket } from '../../../redux/reducers'
 import { v4 as uuidv4 } from 'uuid'
 
-export const FormAddTicket = () => {
+export const FormAddTicket = ({setOpenForm}) => {
     const [formData, setFormData] = useState({
         id: '',
         title: '',
@@ -33,7 +33,7 @@ export const FormAddTicket = () => {
             priority: formData.priority,
             stateticket: formData.stateticket
             }))
-        console.log(formData)
+            setOpenForm(false)
       }
 
     return (

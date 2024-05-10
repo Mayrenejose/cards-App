@@ -27,7 +27,7 @@ export const AddTicket = () => {
             {openForm ? 'Cerrar' : 'Agregar Ticket'}
         </button>
 
-        {openForm && ( <FormAddTicket/>)}
+        {openForm && ( <FormAddTicket setOpenForm={setOpenForm}/>)}
     </div>
   )
 }
