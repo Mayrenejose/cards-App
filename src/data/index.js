@@ -6,7 +6,7 @@ const initialState = [
             description: "Descripción del Ticket 1", 
             type: "técnico", 
             date: "09/05/2024", 
-            priority: "baja", 
+            priority: "alta", 
             stateticket: "abierto" 
           },
           { 
@@ -16,7 +16,7 @@ const initialState = [
             type: "técnico", 
             date: "09/05/2024", 
             priority: "baja", 
-            stateticket: "abierto"
+            stateticket: "cerrado"
           },
         ]
       

@@ -10,9 +10,18 @@ export const ticketSlice = createSlice({
     },
     removeTicket: (state, action) => {
       return state.filter(ticket => ticket.id !== action.payload)
+    },
+    filterPriority: (state, action) => {
+      return state.filter(item => item.priority === action.payload)
+    },
+    filterState: (state, action) => {
+      return state.filter(item => item.stateticket === action.payload)
+    },
+    clearFilter: (state) => {
+      return initialState
     }
   }
 })
 
-export const { addTicket, removeTicket } = ticketSlice.actions
+export const { addTicket, removeTicket, filterPriority, filterState, clearFilter } = ticketSlice.actions
 export default ticketSlice.reducer

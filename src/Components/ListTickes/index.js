@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { removeTicket } from '../../redux/reducers'
 import { SlTrash, SlPencil } from "react-icons/sl"
+import { Filters } from './Filters'
 
 export const ListTickets = () => {
   const dispatch = useDispatch()
@@ -12,6 +13,7 @@ export const ListTickets = () => {
 
   return (
     <div className='flex flex-col items-center'>
+        <Filters/>
         {tickets.map(ticket => (
             <div key={ticket.id} 
               className='w-11/12 my-4 min-h-min
